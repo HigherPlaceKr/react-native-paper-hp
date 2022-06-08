@@ -148,11 +148,11 @@ const Button = ({
   ...rest
 }: Props) => {
   const { current: elevation } = React.useRef<Animated.Value>(
-    new Animated.Value(disabled || mode !== 'contained' ? 0 : 2)
+    new Animated.Value(mode === 'contained' ? 2 : 0)
   );
   React.useEffect(() => {
-    elevation.setValue(disabled || mode !== 'contained' ? 0 : 2);
-  }, [mode, elevation, disabled]);
+    elevation.setValue(mode === 'contained' ? 2 : 0);
+  }, [mode, elevation]);
 
   const handlePressIn = () => {
     if (mode === 'contained') {
@@ -252,6 +252,7 @@ const Button = ({
     StyleSheet.flatten(labelStyle) || {};
 
   const textStyle = { color: textColor, ...font };
+  const elevationRes = disabled || mode !== 'contained' ? 0 : elevation;
   const iconStyle =
     StyleSheet.flatten(contentStyle)?.flexDirection === 'row-reverse'
       ? styles.iconReverse
@@ -263,7 +264,7 @@ const Button = ({
       style={[
         styles.button,
         compact && styles.compact,
-        { elevation },
+        { elevation: elevationRes } as ViewStyle,
         buttonStyle,
         style,
       ]}
@@ -293,7 +294,7 @@ const Button = ({
             <View style={iconStyle}>
               <Icon
                 source={icon}
-                size={customLabelSize ?? 16}
+                size={24}
                 color={
                   typeof customLabelColor === 'string'
                     ? customLabelColor
