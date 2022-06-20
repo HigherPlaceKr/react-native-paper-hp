@@ -7,7 +7,6 @@ import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { withTheme } from '../../core/theming';
 import type { $RemoveChildren } from '../../types';
-import { rgbaColor } from 'react-native-reanimated/src/reanimated2/Colors';
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
   /**
