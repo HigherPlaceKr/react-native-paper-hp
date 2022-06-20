@@ -7,6 +7,7 @@ import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
 import { withTheme } from '../../core/theming';
 import type { $RemoveChildren } from '../../types';
+import { rgbaColor } from 'react-native-reanimated/src/reanimated2/Colors';
 
 type Props = $RemoveChildren<typeof TouchableRipple> & {
   /**
@@ -89,7 +90,6 @@ const RadioButtonIOS = ({
         return (
           <TouchableRipple
             {...rest}
-            borderless
             rippleColor={rippleColor}
             onPress={
               disabled
@@ -110,14 +110,14 @@ const RadioButtonIOS = ({
             accessibilityRole="radio"
             accessibilityState={{ disabled, checked }}
             accessibilityLiveRegion="polite"
-            style={styles.container}
+            style={[styles.container, {borderColor : checked ? "#5254cc" : "#b7b7b7"}]}
             testID={testID}
           >
             <View style={{ opacity: checked ? 1 : 0 }}>
               <MaterialCommunityIcon
                 allowFontScaling={false}
                 name="check"
-                size={24}
+                size={16}
                 color={checkedColor}
                 direction="ltr"
               />
@@ -134,7 +134,7 @@ RadioButtonIOS.displayName = 'RadioButton.IOS';
 const styles = StyleSheet.create({
   container: {
     borderRadius: 18,
-    padding: 6,
+    borderWidth : 2,
   },
 });
 
