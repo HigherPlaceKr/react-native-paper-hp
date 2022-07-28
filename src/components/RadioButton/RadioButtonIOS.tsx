@@ -115,7 +115,7 @@ const RadioButtonIOS = ({
             <View style={{ opacity: checked ? 1 : 0 }}>
               <MaterialCommunityIcon
                 allowFontScaling={false}
-                name="check"
+                name="checkbox-blank-circle"
                 size={16}
                 color={checkedColor}
                 direction="ltr"
