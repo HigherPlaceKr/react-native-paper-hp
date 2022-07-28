@@ -116,7 +116,7 @@ const RadioButtonIOS = ({
               <MaterialCommunityIcon
                 allowFontScaling={false}
                 name="checkbox-blank-circle"
-                size={16}
+                size={14}
                 color={checkedColor}
                 direction="ltr"
               />
@@ -132,8 +132,12 @@ RadioButtonIOS.displayName = 'RadioButton.IOS';
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 18,
-    borderWidth : 2,
+    borderRadius: 10,
+    borderWidth : 1,
+    alignItems : 'center',
+    justifyContent: 'center',
+    width : 20,
+    height : 20,
   },
 });
 
