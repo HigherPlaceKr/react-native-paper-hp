@@ -152,6 +152,7 @@ const RadioButtonItem = ({
           >
             <View style={[styles.container, style]} pointerEvents="none">
               {isLeading && radioButton}
+              {!isLeading && radioButton}
               <Text
                 style={[
                   styles.label,
@@ -164,7 +165,6 @@ const RadioButtonItem = ({
               >
                 {label}
               </Text>
-              {!isLeading && radioButton}
             </View>
           </TouchableRipple>
         );
