@@ -208,8 +208,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   dot: {
-    height: 12,
-    width: 12,
+    height: 10,
+    width: 10,
     borderRadius: 6,
   },
 });
